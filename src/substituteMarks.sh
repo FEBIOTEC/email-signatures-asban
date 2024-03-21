@@ -10,7 +10,7 @@ for i in ${PROJECT_FOLDER}/data/*; do
     mark_name="${initial}_${mark}"
     mark_value=${!mark_name}
     if [ -n "${mark_value}" ]; then
-      echo jksdklfj
+      echo "Substituted ${mark_name}"
       sed -i "s/{{${mark_name}}}/${mark_value}/g" "${i}"
     fi
   done

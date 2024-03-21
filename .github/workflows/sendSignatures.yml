@@ -36,7 +36,7 @@ jobs:
         name: Render signatures
         run: |
           npm install
-          npm src/renderSignatures.js
+          npm ./src/renderSignatures.js
       -
         name: Send emails
         uses: dawidd6/action-send-mail@v3
