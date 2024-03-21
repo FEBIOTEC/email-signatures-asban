@@ -42,13 +42,13 @@ jobs:
         name: Send emails
         uses: dawidd6/action-send-mail@v3
         with:
-          server_address: smtp.gmail7.com
+          server_address: smtp.gmail.com
           server_port: 465
           secure: true
           username: ${{secrets.EMAIL_USERNAME}}
           password: ${{secrets.EMAIL_PASSWORD}}
           subject: Actualització de firmes electròniques
-          to: ${{secrets.J_EMAIL}}, ${{secrets.P_EMAIL}}
+          to: ${{secrets.J_EMAIL}}, ${{secrets.P_EMAIL}}, ${{secrets.EMAIL_USERNAME}}
           from: ${{secrets.EMAIL_USERNAME}}
           body: Aquest missatge ha estat auto-generat.
           ignore_cert: true
