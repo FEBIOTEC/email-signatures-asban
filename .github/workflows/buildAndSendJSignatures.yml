@@ -1,0 +1,55 @@
+name: buildAndSendJSignatures
+
+on:
+  push:
+    branches:
+      - 'master'
+    paths:
+      - 'data/J.json'
+      - 'templates/template.html'
+
+env:
+  J_NAME: ${{ secrets.J_NAME }}
+  J_PHONE: ${{ secrets.J_PHONE }}
+  J_IPHONE: ${{ secrets.J_IPHONE }}
+  J_EMAIL: ${{ secrets.J_EMAIL }}
+  GH_ACTIONS_ENV: true
+
+jobs:
+  build_and_send_signatures:
+    runs-on: ubuntu-latest
+    steps:
+      -
+        name: Checkout code
+        uses: actions/checkout@v3
+      -
+        name: Substitute marks (implicit parameters in env)
+        run: |
+          chmod u+x src/substituteMarks.sh 
+          ./src/substituteMarks.sh
+      -
+        name: Set up nodeJS
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20.x'
+      -
+        name: Render signatures
+        run: |
+          npm install
+          node ./src/renderSignatures.js
+      -
+        name: Send emails
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: smtp.gmail.com
+          server_port: 465
+          secure: true
+          username: ${{secrets.EMAIL_USERNAME}}
+          password: ${{secrets.EMAIL_PASSWORD}}
+          subject: Actualització de firmes electròniques
+          to: ${{secrets.J_EMAIL}}, ${{secrets.EMAIL_USERNAME}}
+          from: ${{secrets.EMAIL_USERNAME}}
+          body: Aquest missatge ha estat auto-generat.
+          ignore_cert: true
+          attachments: ./out/*.html
+          priority: low

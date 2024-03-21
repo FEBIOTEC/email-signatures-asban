@@ -1,20 +1,19 @@
-name: Send_signatures
+name: buildAndSendPSignatures
 
 on:
   push:
     branches:
-      - "master"
+      - 'master'
+    paths:
+      - 'data/P.json'
+      - 'templates/template.html'
 
 env:
   P_NAME: ${{ secrets.P_NAME }}
   P_PHONE: ${{ secrets.P_PHONE }}
   P_IPHONE: ${{ secrets.P_IPHONE }}
   P_EMAIL: ${{ secrets.P_EMAIL }}
-  J_NAME: ${{ secrets.J_NAME }}
-  J_PHONE: ${{ secrets.J_PHONE }}
-  J_IPHONE: ${{ secrets.J_IPHONE }}
-  J_EMAIL: ${{ secrets.J_EMAIL }}
-  GH_ACTIONS_ENV: something
+  GH_ACTIONS_ENV: true
 
 jobs:
   build_and_send_signatures:
@@ -48,7 +47,7 @@ jobs:
           username: ${{secrets.EMAIL_USERNAME}}
           password: ${{secrets.EMAIL_PASSWORD}}
           subject: Actualització de firmes electròniques
-          to: ${{secrets.J_EMAIL}}, ${{secrets.P_EMAIL}}, ${{secrets.EMAIL_USERNAME}}
+          to: ${{secrets.P_EMAIL}}, ${{secrets.EMAIL_USERNAME}}
           from: ${{secrets.EMAIL_USERNAME}}
           body: Aquest missatge ha estat auto-generat.
           ignore_cert: true
