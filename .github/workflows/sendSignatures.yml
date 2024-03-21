@@ -42,16 +42,15 @@ jobs:
         name: Send emails
         uses: dawidd6/action-send-mail@v3
         with:
-          server_address: smtp.ehsalou.com
-          server_port: 587
-          username: ${{secrets.J_EMAIL}}
-          password: ${{secrets.J_PASSWORD}}
-          subject: Prueba de actualización firmas electrónicas
+          server_address: smtp.gmail7.com
+          server_port: 465
+          secure: true
+          username: ${{secrets.EMAIL_USERNAME}}
+          password: ${{secrets.EMAIL_PASSWORD}}
+          subject: Actualització de firmes electròniques
           to: ${{secrets.J_EMAIL}}, ${{secrets.P_EMAIL}}
-          cc: prueba
-          from: tecnic
-          html_body: file://out/J.html
-          secure: false
+          from: ${{secrets.EMAIL_USERNAME}}
+          body: Aquest missatge ha estat auto-generat.
           ignore_cert: true
-          convert_markdown: false
+          attachments: ./out/*.html
           priority: low
