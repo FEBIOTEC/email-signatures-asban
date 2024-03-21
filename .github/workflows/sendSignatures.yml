@@ -1,0 +1,52 @@
+name: Send_signatures
+
+on:
+  push:
+    branches:
+      - "master"
+
+env:
+  P_NAME: ${{ secrets.P_NAME }}
+  P_PHONE: ${{ secrets.P_PHONE }}
+  P_IPHONE: ${{ secrets.P_IPHONE }}
+  P_EMAIL: ${{ secrets.P_EMAIL }}
+  J_NAME: ${{ secrets.J_NAME }}
+  J_PHONE: ${{ secrets.J_PHONE }}
+  J_IPHONE: ${{ secrets.J_IPHONE }}
+  J_EMAIL: ${{ secrets.J_EMAIL }}
+
+jobs:
+  build_and_send_signatures:
+    runs-on: ubuntu-latest
+    steps:
+      -
+        name: Checkout code
+        uses: actions/checkout@v3
+      -
+        name: Substitute marks (implicit parameters in env)
+        run: ./src/substituteMarks.sh
+      -
+        name: Render signatures
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20.x'
+        run: |
+          npm install
+          npm src/renderSignatures.js
+      -
+        name: Send emails
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: smtp.ehsalou.com
+          server_port: 587
+          username: ${{secrets.J_EMAIL}}
+          password: ${{secrets.J_PASSWORD}}
+          subject: Prueba de actualización firmas electrónicas
+          to: ${{secrets.J_EMAIL}}, ${{secrets.P_EMAIL}}
+          cc: prueba
+          from: tecnic
+          html_body: file://out/j.html
+          secure: false
+          ignore_cert: true
+          convert_markdown: false
+          priority: low
