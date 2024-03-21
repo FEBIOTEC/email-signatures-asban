@@ -1,0 +1,6 @@
+{
+  "name": "{{P_NAME}}",
+  "phone": "{{P_PHONE}}",
+  "internationalPhone": "{{P_IPHONE}}",
+  "email": "{{P_EMAIL}}"
+}

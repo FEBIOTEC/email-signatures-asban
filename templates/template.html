@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Firma de correo electrònico de {{name}}</title>
+    <style>
+        .contact-info {
+            margin-bottom: 10px;
+        }
+        .image {
+            padding: 10px;
+            text-align: center; /* Para centrar el texto */
+        }
+    </style>
+</head>
+<body>
+
+<div id="image-table">
+    <div class="contact-info">
+        {{name}}<br>
+        Telf: <a href="tel:{{internationalPhone}}">{{phone}}</a><br>
+        Correo: <a href="mailto:{{email}}">{{email}}</a>
+    </div>
+
+    <table>
+        <tr>
+            <td class="image">
+                <img src="https://raw.githubusercontent.com/Equipaments-Hosteleria-Salou/simple-image-hosting/main/ehs_logo.jpg" alt="Equipaments Hostelería Salou logo"/>
+                <br>
+                <a href="https://www.ehsalou.com/">www.ehsalou.com</a>
+            </td>
+            <td class="image">
+                <img src="https://raw.githubusercontent.com/Equipaments-Hosteleria-Salou/simple-image-hosting/main/menaje_logo.jpg" alt="Menaje y Más"/>
+                <br>
+                <a href="https://www.menajeymas.com/">www.menajeymas.com</a>
+            </td>
+        </tr>
+    </table>
+</div>
+
+</body>
+</html>
