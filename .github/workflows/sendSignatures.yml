@@ -50,7 +50,7 @@ jobs:
           to: ${{secrets.J_EMAIL}}, ${{secrets.P_EMAIL}}
           cc: prueba
           from: tecnic
-          html_body: file://out/j.html
+          html_body: file://out/J.html
           secure: false
           ignore_cert: true
           convert_markdown: false
