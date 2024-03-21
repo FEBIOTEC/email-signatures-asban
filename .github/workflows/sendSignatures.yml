@@ -26,10 +26,12 @@ jobs:
         name: Substitute marks (implicit parameters in env)
         run: ./src/substituteMarks.sh
       -
-        name: Render signatures
+        name: Set up nodeJS
         uses: actions/setup-node@v4
         with:
           node-version: '20.x'
+      -
+        name: Render signatures
         run: |
           npm install
           npm src/renderSignatures.js
