@@ -24,7 +24,9 @@ jobs:
         uses: actions/checkout@v3
       -
         name: Substitute marks (implicit parameters in env)
-        run: ./src/substituteMarks.sh
+        run: |
+          chmod u+x src/substituteMarks.sh 
+          ./src/substituteMarks.sh
       -
         name: Set up nodeJS
         uses: actions/setup-node@v4
