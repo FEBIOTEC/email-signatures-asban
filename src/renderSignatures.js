@@ -9,7 +9,7 @@ const path = require('path');
 
 
 let dirPath;
-if (process.env.DOCKER_ENV) {
+if (process.env.GH_ACTIONS_ENV) {
     dirPath = "./"
 }
 else {

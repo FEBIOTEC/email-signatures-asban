@@ -14,6 +14,7 @@ env:
   J_PHONE: ${{ secrets.J_PHONE }}
   J_IPHONE: ${{ secrets.J_IPHONE }}
   J_EMAIL: ${{ secrets.J_EMAIL }}
+  GH_ACTIONS_ENV: something
 
 jobs:
   build_and_send_signatures:
