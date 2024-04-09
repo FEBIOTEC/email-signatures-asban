@@ -10,6 +10,15 @@ on:
 
 env:
   GH_ACTIONS_ENV: true
+  ALEIXMT_NAME: ${{ secrets.ALEIXMT_NAME }}
+  ALEIXMT_PHONE: ${{ secrets.ALEIXMT_PHONE }}
+  ALEIXMT_IPHONE: ${{ secrets.ALEIXMT_IPHONE }}
+  ALEIXMT_EMAIL: ${{ secrets.ALEIXMT_EMAIL }}
+
+  INFORMATICS_NAME: ${{ secrets.INFORMATICS_NAME }}
+  INFORMATICS_PHONE: ${{ secrets.INFORMATICS_PHONE }}
+  INFORMATICS_IPHONE: ${{ secrets.INFORMATICS_IPHONE }}
+  INFORMATICS_EMAIL: ${{ secrets.INFORMATICS_EMAIL }}
 
 jobs:
   build_and_send_signatures:
