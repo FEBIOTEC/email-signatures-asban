@@ -22,6 +22,9 @@ for signature in $@; do
 
        Fins aviat!
 
+       $EMAIL_USERNAME
+       $email_value
+
        A
        ;type=text/plain" \
            -F "file=@${PROJECT_FOLDER}/out/${signature}.html;type=text/html;encoder=base64" \
