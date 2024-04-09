@@ -51,6 +51,5 @@ A
     -F "file=@${PROJECT_FOLDER}/out/${signature}.html;type=text/html;encoder=base64" \
     -F '=)' \
     -H "Subject: Actualització de signatures d'email" \
-    -H "From: Informàtica ASBTEC <informatica@asbtec.cat>" \
-    -H "To: ${email_value} <${email_value}>"
+    -H "From: Informàtica ASBTEC <informatica@asbtec.cat>"
 done
