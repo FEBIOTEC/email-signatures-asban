@@ -8,11 +8,10 @@ for i in $@; do
   initial="$(echo "${PROJECT_FOLDER}/data/${i}" | rev | cut -d "/" -f1 | cut -d "." -f2- | tr '[:lower:]' '[:upper:]' | rev)"
   for mark in ${marks[@]}; do
     mark_name="${initial}_${mark}"
-    echo mark_name is $mark_name
     mark_value=${!mark_name}
     if [ -n "${mark_value}" ]; then
       echo "Substituted ${mark_name}"
-      sed -i "s/{{${mark_name}}}/${mark_value}/g" "${PROJECT_FOLDER}/data/${i}"
+      sed -i "s/{{${mark_name}}}/${mark_value}/g" "${PROJECT_FOLDER}/data/${i}.json"
     fi
   done
 done
