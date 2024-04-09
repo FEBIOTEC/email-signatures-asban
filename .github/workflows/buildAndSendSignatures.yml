@@ -10,6 +10,8 @@ on:
 
 env:
   GH_ACTIONS_ENV: true
+  EMAIL_USERNAME: ${{ secrets.EMAIL_USERNAME }}
+  EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
   ALEIXMT_NAME: ${{ secrets.ALEIXMT_NAME }}
   ALEIXMT_PHONE: ${{ secrets.ALEIXMT_PHONE }}
   ALEIXMT_IPHONE: ${{ secrets.ALEIXMT_IPHONE }}
