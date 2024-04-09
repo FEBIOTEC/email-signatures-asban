@@ -5,7 +5,7 @@ PROJECT_FOLDER="$(cd "$(dirname "$(realpath "$0")")/../" &>/dev/null && pwd)"
 # Substitute each mark by its value using indirect expansion
 marks=("NAME" "EMAIL" "POSITION" "LINKEDIN")
 for i in $@; do
-  initial="$(echo "${PROJECT_FOLDER}/data/${i}" | rev | cut -d "/" -f1 | cut -d "." -f2- | tr '[:lower:]' '[:upper:]')"
+  initial="$(echo "${PROJECT_FOLDER}/data/${i}" | rev | cut -d "/" -f1 | cut -d "." -f2- | tr '[:lower:]' '[:upper:]' | rev)"
   for mark in ${marks[@]}; do
     mark_name="${initial}_${mark}"
     echo mark_name is $mark_name
