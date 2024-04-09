@@ -13,6 +13,6 @@ for signature in $@; do
     --mail-rcpt "${email_value}" \
     --user "${EMAIL_USERNAME}:${EMAIL_PASSWORD}" \
     -H 'content-type: application/x-www-form-urlencoded' \
-    -T "${PROJECT_FOLDER}/out/${signature}.html" \
-    --data-binary "${PROJECT_FOLDER}/out/${signature}.html"
+    --upload-file "${PROJECT_FOLDER}/out/${signature}.html" \
+    --data-binary "@${PROJECT_FOLDER}/out/${signature}.html"
 done
