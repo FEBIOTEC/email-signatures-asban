@@ -5,6 +5,7 @@ PROJECT_FOLDER="$(cd "$(dirname "$(realpath "$0")")/../" &>/dev/null && pwd)"
 set_secret()
 {
   gh secret set "$1" --body "$2" -r ASBTEC/email-signatures-asbtec
+  echo "with value: $2"
 }
 
 # Path to the file
@@ -19,6 +20,8 @@ fi
 # Open the file for reading
 while IFS= read -r line; do
   secret_name="$(echo "${line}" | cut -d "=" -f1)"
-  secret_content="$(echo "${line}" | cut -d "=" -f2- | sed 's/"*$//g')"
+  secret_content="$(echo "${line}" | cut -d "=" -f2-)"
+  secret_content="${secret_content%\"}"
+  secret_content="${secret_content#\"}"
   set_secret "${secret_name}" "${secret_content}"
 done < "$file"
