@@ -3,7 +3,7 @@
 PROJECT_FOLDER="$(cd "$(dirname "$(realpath "$0")")/../" &>/dev/null && pwd)"
 
 
-for signature in $1; do
+for signature in $@; do
   pointer="$(echo "${signature}" | tr '[:lower:]' '[:upper:]')_EMAIL"
   echo pointer is $pointer
   email_value="${!pointer}"
