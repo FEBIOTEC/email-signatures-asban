@@ -12,14 +12,12 @@ env:
   GH_ACTIONS_ENV: true
   MODIFIED_PATHS: ${{ toJson(github.event.pusher.changes) }}
 
-
 jobs:
   build_and_send_signatures:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
-
       - name: Determine modified files
         id: determine_modified_files
         run: |
@@ -34,12 +32,10 @@ jobs:
           done
           echo "::set-output name=modified_paths::$MODIFIED_PATHS"
         shell: bash
-
       - name: Substitute marks (implicit parameters in env)
         run: |
           chmod u+x src/substituteMarks.sh 
           ./src/substituteMarks.sh ${{ steps.determine_modified_files.outputs.modified_paths }}
-
       - name: Set up nodeJS
         uses: actions/setup-node@v4
         with:
