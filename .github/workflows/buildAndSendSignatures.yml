@@ -10,7 +10,6 @@ on:
 
 env:
   GH_ACTIONS_ENV: true
-  MODIFIED_PATHS: ${{ toJson(github.event.pusher.changes) }}
 
 jobs:
   build_and_send_signatures:

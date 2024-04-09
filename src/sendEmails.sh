@@ -8,6 +8,7 @@ for signature in $1; do
   echo pointer is $pointer
   email_value="${!pointer}"
   echo value is $email_value
+  echo a secret is $INFORMATICS_EMAIL
   echo   curl --url 'smtps://smtp.gmail.com:465' --ssl-reqd --mail-from "${EMAIL_USERNAME}"  --mail-rcpt "${email_value}"  --user "${EMAIL_USERNAME}:${EMAIL_PASSWORD}"  --upload-file "${PROJECT_FOLDER}/out/${signature}.html"
   curl --url 'smtps://smtp.gmail.com:465' \
     --ssl-reqd \
