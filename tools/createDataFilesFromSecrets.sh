@@ -19,7 +19,7 @@ while IFS= read -r line; do
 done < "$file"
 
 # Create data files
-for key in "${!array[@]}"
+for key in "${!signature_names[@]}"
 do
-  cp "${PROJECT_FOLDER}/templates/data.json" "${PROJECT_FOLDER}/templates/${key}.json"
+  cp "${PROJECT_FOLDER}/templates/data.json" "${PROJECT_FOLDER}/data/${key}.json"
 done
