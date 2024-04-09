@@ -21,6 +21,7 @@ jobs:
       - name: Determine modified files
         id: determine_modified_files
         run: |
+          echo appear
           MODIFIED_PATHS=""
           for change in ${{ github.event.pusher.changes }}; do
             path=$(echo $change | jq -r '.path')
@@ -30,6 +31,7 @@ jobs:
               MODIFIED_PATHS="$MODIFIED_PATHS $modified_path"
             fi
           done
+          echo "modified_paths = $MODIFIED_PATHS"
           echo "::set-output name=modified_paths::$MODIFIED_PATHS"
         shell: bash
       - name: Substitute marks (implicit parameters in env)
