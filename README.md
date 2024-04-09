@@ -61,6 +61,15 @@ render new signatures. The script produces a signatures for each file in the `da
 The output of the program is in the `out` folder. This folder is ignored because it contains the personal data of each 
 signature. 
 
+###### Email sending
+We are using the [action-send-email](https://github.com/dawidd6/action-send-mail) from [@dawidd6](https://github.com/dawidd6).
+You will need to configure an email account to be able to send the emails. For a Gmail account you need to configure an 
+App password in you Google account. Here are the steps:
+
+1. [Enable 2-Step Verification.](https://support.google.com/accounts/answer/185839?hl=en&co=GENIE.Platform%3DAndroid).
+   This is needed to create an App password.
+2. [Create an App password](https://support.google.com/accounts/answer/185833?hl=en) for `Mail`.
+
 ###### Workflow
 All steps are triggered in a GitHub Actions Workflow:
 - Secrets are read and injected as environment variables of the workflow. 
