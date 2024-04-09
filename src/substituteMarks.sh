@@ -2,6 +2,8 @@
 
 PROJECT_FOLDER="$(cd "$(dirname "$(realpath "$0")")/../" &>/dev/null && pwd)"
 
+env
+
 # Substitute each mark by its value using indirect expansion
 marks=("NAME" "EMAIL" "POSITION" "LINKEDIN")
 for i in $@; do

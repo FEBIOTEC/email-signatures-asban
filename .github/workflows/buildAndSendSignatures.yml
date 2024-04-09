@@ -53,21 +53,10 @@ jobs:
           fi
           echo "signatures_to_build=${signatures_to_build}" 
           echo "signatures_to_build=${signatures_to_build}" >> $GITHUB_OUTPUT
-          # Build the list of files that have to be sent via email
-          file_to_send=""
-          for file in ${signatures_to_build}; do
-            files_to_send="./out/${file}.html ${files_to_send}"
-          done
-          echo "files_to_send=${files_to_send}" 
-          echo "files_to_send=${files_to_send}" >> $GITHUB_OUTPUT
       - name: List changed files
         run: |
           echo "Signatures to build:"
           for file in ${{ steps.changed-files.outputs.signatures_to_build }}; do
-              echo "$file"
-          done
-          echo "Files to send:"
-          for file in ${{ steps.changed-files.outputs.files_to_send }}; do
               echo "$file"
           done
       - name: Substitute marks (implicit parameters in env)
