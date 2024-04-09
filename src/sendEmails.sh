@@ -12,5 +12,6 @@ for signature in $@; do
     --mail-from "${EMAIL_USERNAME}" \
     --mail-rcpt "${email_value}" \
     --user "${EMAIL_USERNAME}:${EMAIL_PASSWORD}" \
-    -T "${PROJECT_FOLDER}/out/${signature}.html"
+    -H 'content-type: application/x-www-form-urlencoded' \
+    --data-binary "${PROJECT_FOLDER}/out/${signature}.html"
 done
