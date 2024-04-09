@@ -163,3 +163,5 @@ cython_debug/
 node_modules
 out
 !out/.gitkeep
+secrets
+!secrets/.gitkeep

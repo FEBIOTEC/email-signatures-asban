@@ -24,6 +24,7 @@ Aquest missatge ha estat auto-generat. Per a qualsevol problema contacteu amb in
 
 Fins aviat!
 
+A
 ;type=text/plain" \
     -F "file=@${PROJECT_FOLDER}/out/${signature}.html;type=text/html;encoder=base64" \
     -F '=)' \
