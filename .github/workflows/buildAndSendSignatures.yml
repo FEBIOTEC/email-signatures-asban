@@ -88,6 +88,7 @@ jobs:
         run: |
           for signature in ${{ steps.changed-files.outputs.signatures_to_build }}; do
             pointer="$(echo "${signature}" | tr '[:lower:]' '[:upper:]')_EMAIL"
+            echo pointer is $pointer
             email_value="${!pointer}"
             echo curl --url 'smtps://smtp.gmail.com:465' \
               --ssl-reqd \
