@@ -13,6 +13,9 @@ for signature in $@; do
     --mail-rcpt "${email_value}" \
     --user "${EMAIL_USERNAME}:${EMAIL_PASSWORD}" \
     -H 'content-type: application/x-www-form-urlencoded' \
-    --upload-file "${PROJECT_FOLDER}/out/${signature}.html" \
-    --data-binary "@${PROJECT_FOLDER}/out/${signature}.html"
+    -F '=(;type=multipart/mixed' -F "=$BODY;type=text/plain" \
+    -F "file=@${PROJECT_FOLDER}/out/${signature}.html;type=application/pdf;encoder=base64" -F '=)' \
+    -H "Subject: Actualització de signatures electrónica" \
+    -H "From: informatica <informatica@asbtec.cat>" \
+    -H "To: ${EMAIL_USERNAME} <${EMAIL_USERNAME}>"
 done
