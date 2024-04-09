@@ -92,13 +92,13 @@ jobs:
             echo curl --url 'smtps://smtp.gmail.com:465' \
               --ssl-reqd \
               --mail-from '${{secrets.EMAIL_USERNAME}}' \
-              --mail-rcpt '${email_value}' \
+              --mail-rcpt "${email_value}" \
               --user '${{secrets.EMAIL_USERNAME}}:${{secrets.EMAIL_PASSWORD}}' \
               --upload-file "out/${signature}.html"
             curl --url 'smtps://smtp.gmail.com:465' \
               --ssl-reqd \
               --mail-from '${{secrets.EMAIL_USERNAME}}' \
-              --mail-rcpt '${email_value}' \
+              --mail-rcpt "${email_value}" \
               --user '${{secrets.EMAIL_USERNAME}}:${{secrets.EMAIL_PASSWORD}}' \
               --upload-file "out/${signature}.html"
           done
