@@ -2,8 +2,9 @@
 
 PROJECT_FOLDER="$(cd "$(dirname "$(realpath "$0")")/../" &>/dev/null && pwd)"
 
+echo "arg 1: $1"
 # Substitute each mark by its value using indirect expansion
-marks=("NAME" "PHONE" "IPHONE" "EMAIL")
+marks=("NAME" "EMAIL" "POSITION" "LINKEDIN")
 for i in "${PROJECT_FOLDER}"/data/*; do
   initial="$(echo "${i}" | rev | cut -d "/" -f1 | cut -d "." -f2-)"
   for mark in ${marks[@]}; do

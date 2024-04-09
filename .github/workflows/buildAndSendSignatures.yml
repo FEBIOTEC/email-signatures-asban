@@ -1,0 +1,65 @@
+name: buildAndSendSignatures
+
+on:
+  push:
+    branches:
+      - 'master'
+    paths:
+      - 'data/**'
+      - 'templates/template.html'
+
+env:
+  GH_ACTIONS_ENV: true
+  MODIFIED_PATHS: ${{ toJson(github.event.pusher.changes) }}
+
+
+jobs:
+  build_and_send_signatures:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Determine modified files
+        id: determine_modified_files
+        run: |
+          MODIFIED_PATHS=""
+          for change in ${{ github.event.pusher.changes }}; do
+            path=$(echo $change | jq -r '.path')
+            if [[ "$path" == *"data/"* ]]; then
+              # Replace "data" with "out"
+              modified_path=$(echo "$path" | sed 's/data/out/')
+              MODIFIED_PATHS="$MODIFIED_PATHS $modified_path"
+            fi
+          done
+          echo "::set-output name=modified_paths::$MODIFIED_PATHS"
+        shell: bash
+
+      - name: Substitute marks (implicit parameters in env)
+        run: |
+          chmod u+x src/substituteMarks.sh 
+          ./src/substituteMarks.sh ${{ steps.determine_modified_files.outputs.modified_paths }}
+
+      - name: Set up nodeJS
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20.x'
+      - name: Render signatures
+        run: |
+          npm install
+          node ./src/renderSignatures.js
+      - name: Send emails
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: smtp.gmail.com
+          server_port: 465
+          secure: true
+          username: ${{secrets.EMAIL_USERNAME}}
+          password: ${{secrets.EMAIL_PASSWORD}}
+          subject: Actualització de firmes electròniques
+          to: ${{secrets.INFORMATIC_EMAIL}}, ${{secrets.EMAIL_USERNAME}}
+          from: ${{secrets.EMAIL_USERNAME}}
+          body: Aquest missatge ha estat auto-generat.
+          ignore_cert: true
+          attachments: ${{ steps.determine_modified_files.outputs.modified_paths }}
+          priority: low
