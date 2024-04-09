@@ -11,12 +11,23 @@ for signature in $@; do
     --ssl-reqd \
     --mail-from "${EMAIL_USERNAME}" \
     --mail-rcpt "${email_value}" \
+    --mail-rcpt "${EMAIL_USERNAME}" \
     --user "${EMAIL_USERNAME}:${EMAIL_PASSWORD}" \
     -F '=(;type=multipart/mixed' \
-    -F "=Actualitza les teves signatures de email;type=text/plain" \
+    -F "=Hola!
+
+Una nova signatura per al email d'ASBTEC ${email_value} ha estat generada. Descarrega el fitxer adjunt d'aquest correu i actualitza la teva signatura al teu client de correu electrònic.
+
+Si has rebut més d'un correu d'aquest tipus fes servir el contingut de l'últim mail per a actualitzar la firma, doncs serà la versió més actualitzada. Pots borrar la resta.
+
+Aquest missatge ha estat auto-generat. Per a qualsevol problema contacteu amb informatica@asbtec.cat.
+
+Fins aviat!
+
+;type=text/plain" \
     -F "file=@${PROJECT_FOLDER}/out/${signature}.html;type=text/html;encoder=base64" \
     -F '=)' \
-    -H "Subject: Actualització de signatures electrónica" \
-    -H "From: Informatica ASBTEC <informatica@asbtec.cat>" \
-    -H "To: ${EMAIL_USERNAME} <${EMAIL_USERNAME}>"
+    -H "Subject: Actualització de signatures d'email" \
+    -H "From: Informàtica ASBTEC <informatica@asbtec.cat>" \
+    -H "To: ${email_value} <${email_value}>"
 done
