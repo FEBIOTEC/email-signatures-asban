@@ -8,6 +8,9 @@
         .contact-info {
             margin-bottom: 10px;
         }
+        .name-info {
+            color: #000000; /* Text color */
+        }
         .image {
             padding: 10px;
             text-align: center; /* To center text */
@@ -22,11 +25,15 @@
 <body>
 
 <div id="image-table">
-    <div class="contact-info">
-        {{name}}<br>
-        Telf: <a href="tel:{{internationalPhone}}">{{phone}}</a><br>
+    <span class="name-info">
+        {{name}}
+    </span>
+    <span class="contact-info">
+        <br>
+        Telf: <a href="tel:{{internationalPhone}}">{{phone}}</a>
+        <br>
         Correo: <a href="mailto:{{email}}">{{email}}</a>
-    </div>
+    </span>
 
     <table>
         <tr>
