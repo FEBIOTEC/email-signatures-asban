@@ -2,6 +2,9 @@
 Contains the necessary data and code to generate the email signature of the managed employees in EHS.
 
 ## Components
+###### Bulk update of secrets
+We use `gh` CLI utility to read from a secret file that creates all of our organization secrets in bulk.
+
 ###### Secrets
 The real data for the signatures are stored as GitHub secrets in the [EHS organization](https://github.com/Equipaments-Hosteleria-Salou).
 Each secret belongs to the person with the same initial in its name. This is for privacy reasons. Secrets are used in 
