@@ -90,6 +90,7 @@ jobs:
             pointer="$(echo "${signature}" | tr '[:lower:]' '[:upper:]')_EMAIL"
             echo pointer is $pointer
             email_value="${!pointer}"
+            echo pointer is $email_value
             echo curl --url 'smtps://smtp.gmail.com:465' \
               --ssl-reqd \
               --mail-from '${{secrets.EMAIL_USERNAME}}' \
