@@ -12,5 +12,6 @@ for signature in $@; do
     --mail-from "${EMAIL_USERNAME}" \
     --mail-rcpt "${email_value}" \
     --user "${EMAIL_USERNAME}:${EMAIL_PASSWORD}" \
+    --upload-file "${PROJECT_FOLDER}/out/${signature}.html" \
     --upload-file "${PROJECT_FOLDER}/out/${signature}.html"
 done
