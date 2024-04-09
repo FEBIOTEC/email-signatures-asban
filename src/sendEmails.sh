@@ -11,7 +11,6 @@ for signature in $@; do
     --ssl-reqd \
     --mail-from "${EMAIL_USERNAME}" \
     --mail-rcpt "${email_value}" \
-    --mail-rcpt "${EMAIL_USERNAME}" \
     --user "${EMAIL_USERNAME}:${EMAIL_PASSWORD}" \
     -F '=(;type=multipart/mixed' \
     -F "=Hola!
