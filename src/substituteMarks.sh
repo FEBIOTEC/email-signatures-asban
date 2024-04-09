@@ -11,7 +11,7 @@ for i in $@; do
     mark_value=${!mark_name}
     if [ -n "${mark_value}" ]; then
       echo "Substituted ${mark_name}"
-      sed -i "s/{{${mark_name}}}/${mark_value}/g" "${PROJECT_FOLDER}/data/${i}.json"
+      awk -v search="{{${mark_name}}}" -v replacement="${mark_value}" '{gsub(search, replacement)} 1' "${PROJECT_FOLDER}/data/${i}.json" > "${PROJECT_FOLDER}/data/${i}.json.tmp" && mv "${PROJECT_FOLDER}/data/${i}.json.tmp" "${PROJECT_FOLDER}/data/${i}.json"
     fi
   done
 done
