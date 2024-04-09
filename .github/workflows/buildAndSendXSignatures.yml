@@ -1,4 +1,4 @@
-name: buildAndSendJSignatures
+name: buildAndSendXSignatures
 
 on:
   push:
@@ -9,7 +9,7 @@ on:
       - 'templates/template.html'
 
 env:
-  X_NAME: ${{ secrets._NAME }}
+  X_NAME: ${{ secrets.X_NAME }}
   X_PHONE: ${{ secrets.X_PHONE }}
   X_IPHONE: ${{ secrets.X_IPHONE }}
   X_EMAIL: ${{ secrets.X_EMAIL }}
