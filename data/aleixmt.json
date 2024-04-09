@@ -1,6 +1,6 @@
 {
-  "name": "{{ALEIXMT_NAME}}",
-  "email": "{{ALEIXMT_EMAIL}}",
-  "position": "{{ALEIXMT_POSITION}}",
-  "linkedin": "{{ALEIXMT_LINKEDIN}}"
+  "name": "{{NAME}}",
+  "email": "{{EMAIL}}",
+  "position": "{{POSITION}}",
+  "linkedin": "{{LINKEDIN}}"
 }

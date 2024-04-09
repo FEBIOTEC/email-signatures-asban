@@ -1,6 +1,6 @@
 {
-  "name": "{{INFORMATICS_NAME}}",
-  "email": "{{INFORMATICS_EMAIL}}",
-  "position": "{{INFORMATICS_POSITION}}",
-  "linkedin": "{{INFORMATICS_LINKEDIN}}"
+  "name": "{{NAME}}",
+  "email": "{{EMAIL}}",
+  "position": "{{POSITION}}",
+  "linkedin": "{{LINKEDIN}}"
 }
