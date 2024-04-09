@@ -5,7 +5,7 @@ on:
     branches:
       - 'master'
     paths:
-      - 'data/**'
+      - 'data/**.json'
       - 'templates/template.html'
 
 env:
@@ -16,28 +16,26 @@ jobs:
   build_and_send_signatures:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-      - name: Determine modified files
-        id: determine_modified_files
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: ${{ github.event_name == 'pull_request' && 2 || 0 }}
+      - name: Get changed files
+        id: changed-files
         run: |
-          echo appear
-          MODIFIED_PATHS=""
-          for change in ${{ github.event.pusher.changes }}; do
-            path=$(echo $change | jq -r '.path')
-            if [[ "$path" == *"data/"* ]]; then
-              # Replace "data" with "out"
-              modified_path=$(echo "$path" | sed 's/data/out/')
-              MODIFIED_PATHS="$MODIFIED_PATHS $modified_path"
-            fi
+          if ${{ github.event_name == 'pull_request' }}; then
+              echo "changed_files=$(git diff --name-only -r HEAD^1 HEAD | xargs)" >> $GITHUB_OUTPUT
+          else
+              echo "changed_files=$(git diff --name-only ${{ github.event.before }} ${{ github.event.after }} | xargs)" >> $GITHUB_OUTPUT
+          fi
+      - name: List changed files
+        run: |
+          for file in ${{ steps.changed-files.outputs.changed_files }}; do
+              echo "$file was changed"
           done
-          echo "modified_paths = $MODIFIED_PATHS"
-          echo "::set-output name=modified_paths::$MODIFIED_PATHS"
-        shell: bash
       - name: Substitute marks (implicit parameters in env)
         run: |
           chmod u+x src/substituteMarks.sh 
-          ./src/substituteMarks.sh ${{ steps.determine_modified_files.outputs.modified_paths }}
+          ./src/substituteMarks.sh ${{ steps.changed-files.outputs.changed_files }}
       - name: Set up nodeJS
         uses: actions/setup-node@v4
         with:
@@ -59,5 +57,5 @@ jobs:
           from: ${{secrets.EMAIL_USERNAME}}
           body: Aquest missatge ha estat auto-generat.
           ignore_cert: true
-          attachments: ${{ steps.determine_modified_files.outputs.modified_paths }}
+          attachments: ${{ steps.changed-files.outputs.changed_files }}
           priority: low
