@@ -19,14 +19,18 @@ jobs:
       - uses: actions/checkout@v3
         with:
           fetch-depth: ${{ github.event_name == 'pull_request' && 2 || 0 }}
+        # https://stackoverflow.com/questions/74265821/get-modified-files-in-github-actions
       - name: Get changed files
         id: changed-files
         run: |
+          output=""
           if ${{ github.event_name == 'pull_request' }}; then
-              echo "changed_files=$(git diff --name-only -r HEAD^1 HEAD | xargs)" >> $GITHUB_OUTPUT
+              output="$(git diff --name-only -r HEAD^1 HEAD | xargs)" 
           else
-              echo "changed_files=$(git diff --name-only ${{ github.event.before }} ${{ github.event.after }} | xargs)" >> $GITHUB_OUTPUT
+              output="$(git diff --name-only ${{ github.event.before }} ${{ github.event.after }} | xargs)" 
           fi
+          echo echo "changed_files=${output}" >> $GITHUB_OUTPUT
+
       - name: List changed files
         run: |
           for file in ${{ steps.changed-files.outputs.changed_files }}; do
