@@ -72,10 +72,12 @@ jobs:
           signatures_to_build=""
           if [ "${template_modified}" = "false" ]; then   
             for file in ${input_text}; do
-          echo for
-              if grep -q "/" "${file}" && [ "$(echo "${file}" | cut -f1 -d "/")" = "data" ]; then
-                if grep -q "." "${file}"; then 
-                  signatures_to_build="$(echo "${file}" | cut -d "/" -f2 | cut -d "." -f1) ${signatures_to_build}"
+          echo value  $file
+              if grep -q "/" "${file}"; then
+                if [ "$(echo "${file}" | cut -f1 -d "/")" = "data" ]; then
+                  if grep -q "." "${file}"; then 
+                    signatures_to_build="$(echo "${file}" | cut -d "/" -f2 | cut -d "." -f1) ${signatures_to_build}"
+                  fi
                 fi
               fi 
             done
