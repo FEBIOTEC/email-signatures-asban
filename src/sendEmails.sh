@@ -14,8 +14,8 @@ for signature in $@; do
     --user "${EMAIL_USERNAME}:${EMAIL_PASSWORD}" \
     -H 'content-type: application/x-www-form-urlencoded' \
     -F '=(;type=multipart/mixed' -F "=$BODY;type=text/plain" \
-    -F "file=@${PROJECT_FOLDER}/out/${signature}.html;type=text/html;encoder=base64" -F '=)' \
+    -F "file=@${PROJECT_FOLDER}/out/${signature}.html;type=text/html" -F '=)' \
     -H "Subject: Actualització de signatures electrónica" \
-    -H "From: informatica <informatica@asbtec.cat>" \
+    -H "From: Informatica ASBTEC <informatica@asbtec.cat>" \
     -H "To: ${EMAIL_USERNAME} <${EMAIL_USERNAME}>"
 done
