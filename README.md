@@ -78,7 +78,7 @@ If there is the need to add a new signature you need a workflow that manages tha
   and the phone with international prefix (without spaces to generate a proper `mailto:` link), where N is the initial 
   or 
   another string that identifies the person but without revealing any of its personal data.
-- Create the file N.json in the `data` folder. N needs to be the same.
+- Create the file `N.json` in the `data` folder. N needs to be the same.
 - Create the workflow `sendSignatureToN.yml` that is configured to send the signature to its owner and is triggered only
   when the signature is modified.
 - Add the files, commit and push to GitHub to trigger the workflow.
@@ -95,7 +95,7 @@ whitespace or a line break.
 
 Since the workflow is only triggered
 when the signature is updated, you can add a meaningless change in the data file of the signature such as adding a
-whitespace or a line break.
+whitespace or a line break to trigger the workflow and receive the signatures in your email.
 
 ## Roadmap
 This project is completely functional! But there is still some space for improvements...
