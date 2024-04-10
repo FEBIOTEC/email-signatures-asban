@@ -15,7 +15,7 @@ for signature in $@; do
     -F '=(;type=multipart/mixed' \
     -F "=Hola!
 
-Una nova signatura per al email d'ASBTEC ${email_value} ha estat generada. Descarrega el fitxer adjunt d'aquest correu i actualitza la teva signatura al teu client de correu electrònic.
+Estàs rebent aquest correu perquè una nova signatura per a l'email d'ASBTEC ${email_value} ha estat generada. Descarrega el fitxer adjunt d'aquest correu i actualitza la teva signatura al teu client de correu electrònic.
 
 Si has rebut més d'un correu d'aquest tipus fes servir el contingut de l'últim mail per a actualitzar la firma, doncs serà la versió més actualitzada. Pots borrar la resta.
 
