@@ -4,8 +4,12 @@ PROJECT_FOLDER="$(cd "$(dirname "$(realpath "$0")")/../" &>/dev/null && pwd)"
 
 set_secret()
 {
-  gh secret set "$1" --body "$2" -r ASBTEC/email-signatures-asbtec
-  echo "with value: $2"
+
+  if gh secret set "$1" --body "$2" -r ASBTEC/email-signatures-asbtec; then
+    echo "Setting secret $1 with value: $2"
+  else
+    echo "Setting secret $1 failed"
+  fi
 }
 
 # Path to the file
