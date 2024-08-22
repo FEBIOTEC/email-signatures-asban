@@ -8,7 +8,7 @@ for signature in $@; do
 
   curl -v --url 'smtps://smtp.gmail.com:465' \
     --ssl-reqd \
-    --mail-from "${EMAIL_USERNAME}" \
+    --mail-from "<${EMAIL_USERNAME}>" \
     --mail-rcpt "${email_value}" \
     --mail-rcpt "${EMAIL_USERNAME}" \
     --user "${EMAIL_USERNAME}:${EMAIL_PASSWORD}" \
