@@ -44,7 +44,10 @@ env:
   ACTIVITIES_EMAIL: ${{ secrets.ACTIVITIES_EMAIL }}
   ACTIVITIES_POSITION: ${{ secrets.ACTIVITIES_POSITION }}
   ACTIVITIES_LINKEDIN: ${{ secrets.ACTIVITIES_LINKEDIN }}
-
+  ADVISER_NAME: ${{ secrets.ADVISER_NAME }}
+  ADVISER_EMAIL: ${{ secrets.ADVISER_EMAIL }}
+  ADVISER_POSITION: ${{ secrets.ADVISER_POSITION }}
+  ADVISER_LINKEDIN: ${{ secrets.ADVISER_LINKEDIN }}
 jobs:
   build_and_send_signatures:
     runs-on: ubuntu-latest

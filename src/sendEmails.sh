@@ -8,7 +8,7 @@ for signature in $@; do
 
   curl -v --url 'smtps://smtp.gmail.com:465' \
     --ssl-reqd \
-    --mail-from "<${EMAIL_USERNAME}>" \
+    --mail-from "${EMAIL_USERNAME}" \
     --mail-rcpt "${email_value}" \
     --mail-rcpt "${EMAIL_USERNAME}" \
     --user "${EMAIL_USERNAME}:${EMAIL_PASSWORD}" \
@@ -28,6 +28,6 @@ A
     -F "file=@${PROJECT_FOLDER}/out/${signature}.html;type=text/html;encoder=base64" \
     -F '=)' \
     -H "Subject: Actualització de signatures d'email" \
-    -H "From: informatica@asbtec.cat" \
+    -H "From: Informàtica ASBTEC <informatica@asbtec.cat>" \
     -H "To: ${EMAIL_USERNAME} <${EMAIL_USERNAME}>"
 done
