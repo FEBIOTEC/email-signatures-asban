@@ -48,6 +48,10 @@ env:
   ADVISER_EMAIL: ${{ secrets.ADVISER_EMAIL }}
   ADVISER_POSITION: ${{ secrets.ADVISER_POSITION }}
   ADVISER_LINKEDIN: ${{ secrets.ADVISER_LINKEDIN }}
+  UNIVERSITIES_NAME: ${{ secrets.UNIVERSITIES_NAME }}
+  UNIVERSITIES_EMAIL: ${{ secrets.UNIVERSITIES_EMAIL }}
+  UNIVERSITIES_POSITION: ${{ secrets.UNIVERSITIES_POSITION }}
+  UNIVERSITIES_LINKEDIN: ${{ secrets.UNIVERSITIES_LINKEDIN }}
 jobs:
   build_and_send_signatures:
     runs-on: ubuntu-latest
