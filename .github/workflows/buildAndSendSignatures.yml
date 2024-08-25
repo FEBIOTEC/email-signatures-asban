@@ -52,6 +52,11 @@ env:
   UNIVERSITIES_EMAIL: ${{ secrets.UNIVERSITIES_EMAIL }}
   UNIVERSITIES_POSITION: ${{ secrets.UNIVERSITIES_POSITION }}
   UNIVERSITIES_LINKEDIN: ${{ secrets.UNIVERSITIES_LINKEDIN }}
+  JORNADES_NAME: ${{ secrets.JORNADES_NAME }}
+  JORNADES_EMAIL: ${{ secrets.JORNADES_EMAIL }}
+  JORNADES_POSITION: ${{ secrets.JORNADES_POSITION }}
+  JORNADES_LINKEDIN: ${{ secrets.JORNADES_LINKEDIN }}
+
 jobs:
   build_and_send_signatures:
     runs-on: ubuntu-latest
