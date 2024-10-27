@@ -367,7 +367,7 @@ and member of the working unit of informatics in FEBIOTEC.
 **email-signatures-asban ultimately belongs to [Aleix Mariné-Tena](https://github.com/AleixMT) and has the control over 
 the licensing and distribution therms.**
 
->Copyright 2024-2024 [Aleix Mariné-Tena](https://github.com/AleixMT)
+>Copyright 2024 - Present [Aleix Mariné-Tena](https://github.com/AleixMT)
 
 >This program is free software: you can redistribute it and/or modify it under the terms of the GNU Affero General Public
 License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later
