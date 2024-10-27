@@ -443,7 +443,7 @@ biotechnologists and the association that will benefit from this particular repo
 [loc-url]: https://github.com/FEBIOTEC/email-signatures-asban
 [commit-shield]: https://img.shields.io/github/last-commit/FEBIOTEC/email-signatures-asban/master?style=flat-square&logo=github
 [commit-url]: https://github.com/FEBIOTEC/email-signatures-asban/issues
-[activity-shield]: https://img.shields.io/github/commit-activity/y/FEBIOTEC/email-signatures-asban?style=flat-square&color=black&logo=github
+[activity-shield]: https://img.shields.io/github/commit-activity/y/FEBIOTEC/email-signatures-asban?style=flat-square&color=purple&logo=github
 [activity-url]: https://github.com/FEBIOTEC/email-signatures-asban/graphs/commit-activity
 [repo-size-shield]: https://img.shields.io/github/repo-size/FEBIOTEC/email-signatures-asban?style=flat-square&logo=github
 [repo-size-url]: https://github.com/FEBIOTEC/email-signatures-asban
@@ -452,11 +452,11 @@ biotechnologists and the association that will benefit from this particular repo
 [CD-pipeline-shield]: https://img.shields.io/github/actions/workflow/status/FEBIOTEC/email-signatures-asban/buildAndSendSignatures.yml?style=flat-square&logo=githubactions&label=last%20workflow%20execution
 [CD-pipeline-url]: https://github.com/FEBIOTEC/email-signatures-asban/actions/workflows/buildAndSendSignatures.yml
 
-[git-shield]: https://img.shields.io/badge/git-2.25.1-black?style=for-the-badge&logo=git
+[git-shield]: https://img.shields.io/badge/git-2.25.1-brown?style=for-the-badge&logo=git
 [git-url]: https://git.com
-[bash-shield]: https://img.shields.io/badge/bash-5.0.17-black?style=for-the-badge&logo=gnubash
+[bash-shield]: https://img.shields.io/badge/bash-5.0.17-green?style=for-the-badge&logo=gnubash
 [bash-url]: https://www.gnu.org/software/bash/
-[nodejs-shield]: https://img.shields.io/badge/nodejs-16.20.2-green?style=for-the-badge&logo=node.js
+[nodejs-shield]: https://img.shields.io/badge/nodejs-16.20.2-yellow?style=for-the-badge&logo=node.js
 [nodejs-url]: https://nodejs.org/en
-[handlebars-shield]: https://img.shields.io/badge/handlebarsjs-4.7.8-red?style=for-the-badge&logo=handlebarsjs
+[handlebars-shield]: https://img.shields.io/badge/handlebarsjs-4.7.8-orange?style=for-the-badge&logo=handlebarsjs
 [handlebars-url]: https://handlebarsjs.com/
