@@ -434,12 +434,12 @@ biotechnologists and the association that will benefit from this particular repo
 [forks-shield]: https://img.shields.io/github/forks/FEBIOTEC/email-signatures-asban.svg?style=for-the-badge&label=Fork&maxAge=2592000
 [forks-url]: https://github.com/FEBIOTEC/email-signatures-asban/network/members
 [license-shield]: https://img.shields.io/github/license/FEBIOTEC/email-signatures-asban?style=flat-square&color=darkgreen&logo=gnu
-[license-url]: https://github.com/FEBIOTEC/email-signatures-asban/blob/master/LICENSE.md
+[license-url]: https://github.com/FEBIOTEC/email-signatures-asban/blob/master/LICENSE
 [product-screenshot]: .github/images/product-screenshot.png
 
-[language-shield]: https://img.shields.io/github/languages/top/FEBIOTEC/email-signatures-asban?style=flat-square&color=yellow&logo=javascript
-[language-url]: https://www.javascript.com/
-[loc-shield]: https://img.shields.io/tokei/lines/github/FEBIOTEC/email-signatures-asban
+[language-shield]: https://img.shields.io/github/languages/top/FEBIOTEC/email-signatures-asban?style=flat-square&color=yellow&logo=gnubash
+[language-url]: https://www.gnu.org/software/bash/
+[loc-shield]: https://img.shields.io/endpoint?url=https://ghloc.vercel.app/api/FEBIOTEC/email-signatures-asban/badge?filter=.html$,.sh$,.js$&style=flat&logoColor=white&label=Lines%20of%20Code
 [loc-url]: https://github.com/FEBIOTEC/email-signatures-asban
 [commit-shield]: https://img.shields.io/github/last-commit/FEBIOTEC/email-signatures-asban/master?style=flat-square&logo=github
 [commit-url]: https://github.com/FEBIOTEC/email-signatures-asban/issues
@@ -449,7 +449,7 @@ biotechnologists and the association that will benefit from this particular repo
 [repo-size-url]: https://github.com/FEBIOTEC/email-signatures-asban
 [language-count-shield]: https://img.shields.io/github/languages/count/FEBIOTEC/email-signatures-asban?style=flat-square&color=red&logo=github
 [language-count-url]: https://github.com/FEBIOTEC/email-signatures-asban
-[CD-pipeline-shield]: https://img.shields.io/github/actions/workflow/status/FEBIOTEC/email-signatures-asban/buildAndSendSignatures.yml?style=flat-square&logo=docker&label=last%20execution
+[CD-pipeline-shield]: https://img.shields.io/github/actions/workflow/status/FEBIOTEC/email-signatures-asban/buildAndSendSignatures.yml?style=flat-square&logo=githubactions&label=last%20workflow%20execution
 [CD-pipeline-url]: https://github.com/FEBIOTEC/email-signatures-asban/actions/workflows/buildAndSendSignatures.yml
 
 [git-shield]: https://img.shields.io/badge/git-2.25.1-black?style=for-the-badge&logo=git
