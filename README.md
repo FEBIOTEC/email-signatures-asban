@@ -1,17 +1,17 @@
 # email-signatures
-Contains the necessary data and code to generate the email signature of the managed employees in EHS.
+Contains the necessary data and code to generate the email signature of the email accounts in ASBTEC.
 
 ## Components
 ###### Bulk update of secrets
 We use `gh` CLI utility to read from a secret file that creates all of our organization secrets in bulk.
 
 ###### Secrets
-The real data for the signatures are stored as GitHub secrets in the [EHS organization](https://github.com/Equipaments-Hosteleria-Salou).
+The real data for the signatures are stored as GitHub secrets in the [ASBTEC organization](https://github.com/ASBTEC).
 Each secret belongs to the person with the same initial in its name. This is for privacy reasons. Secrets are used in 
-the [GitHub Actions workflow](https://github.com/Equipaments-Hosteleria-Salou/email-signatures/actions).
+the [GitHub Actions workflow](https://github.com/ASBTEC/email-signatures-asbtec/actions).
 
 To add a new signature you will need to define the secrets for the personal data of that employee in the 
-[organization secrets](https://github.com/organizations/Equipaments-Hosteleria-Salou/settings/secrets/actions).
+[organization secrets](https://github.com/organizations/ASBTEC/settings/secrets/actions).
 
 ###### Data files
 Data for signatures is defined in the `data` folder in JSON format. The data files are the files that are used by the 
@@ -31,7 +31,7 @@ parameters.
 ###### Template
 The template for all the signatures is defined in the `template` folder. The template is valid for all signatures. No 
 need to modify it to add a new signature. The template is written in HTML and uses the image stored in [this public 
-repository](https://github.com/Equipaments-Hosteleria-Salou/simple-image-hosting) to obtain the images for the 
+repository](https://github.com/ASBTEC/logos) to obtain the images for the 
 signature.
 
 The template is designed to be used with [Handlebars](https://handlebarsjs.com/).
