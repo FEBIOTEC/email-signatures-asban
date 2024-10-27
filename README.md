@@ -118,7 +118,7 @@ This section lists any major frameworks/libraries used to bootstrap the email-si
   password.
 2. [Create an App password](https://support.google.com/accounts/answer/185833?hl=en) for `Mail`.
 3. Add the email account and the code that you got from step 2 in the `secrets.txt` file or add the secrets into 
-  [here](https://github.com/ASBTEC/email-signatures-asban/settings/secrets/actions). The name for the secrets is 
+  [here](https://github.com/FEBIOTEC/email-signatures-asban/settings/secrets/actions). The name for the secrets is 
   `EMAIL_USERNAME` and `EMAIL_PASSWORD`. The first contains the email account that is going to be the automatic sender 
   of emails for the signatures and the second is the password that you got from step 2. 
 4. Create the secrets
@@ -127,7 +127,7 @@ This section lists any major frameworks/libraries used to bootstrap the email-si
   a particular signature. We recommend `N` to be the name of the position that this signature is generated for, or an
   initial of the name of the person, but it can be anything as long as it is the *only* signature with that value of 
   `N`. You can create these secrets manually [by going to the GitHub secrets of this 
-  repo](https://github.com/ASBTEC/email-signatures-asban/settings/secrets/actions), or you can use the `setSecrets.sh` 
+  repo](https://github.com/FEBIOTEC/email-signatures-asban/settings/secrets/actions), or you can use the `setSecrets.sh` 
   script in the `tools` folder. This tool will read the file `secrets/secrets.txt` expecting variables called the same 
   as the ones that we want to declare as secrets in **shell** format. You can find an example of `secrets.txt` in  
   `templates/secrets.txt` folder. Repeat this step for as many email accounts as you like.
@@ -250,7 +250,7 @@ parameters.
 ###### Template
 The template for all the signatures is defined in the `template` folder. The template is valid for all signatures. No
 need to modify it to add a new signature. The template is written in HTML and uses the image stored in [this public
-repository](https://github.com/ASBTEC/logos) to obtain the images for the
+repository](https://github.com/FEBIOTEC/email-signatures-asban/tree/master/.github/images) to obtain the images for the
 signature.
 
 The template is designed to be used with [Handlebars](https://handlebarsjs.com/).
@@ -332,19 +332,19 @@ to satisfy your
 needs as soon as possible.
 
 If you want to make a contribution to email-signatures-asban by yourself, please
-[open a new issue](https://github.com/email-signatures-asban/issues/new), so we can discuss the reach of your 
+[open a new issue](https://github.com/FEBIOTEC/email-signatures-asban/issues/new), so we can discuss the reach of your 
 contribution.
-After that, [fork the repo](https://github.com/email-signatures-asban/fork), implement your change and create a
-[pull request](https://github.com/email-signatures-asban/compare) from your fork to the `master` branch. We will merge 
+After that, [fork the repo](https://github.com/FEBIOTEC/email-signatures-asban/fork), implement your change and create a
+[pull request](https://github.com/FEBIOTEC/email-signatures-asban/compare) from your fork to the `master` branch. We will merge 
 your changes as soon as possible, so they are available in the next releases of email-signatures-asban.
 
 So, for each change that you want to do to email-signatures-asban by yourself, you will need to:
-1. [Fork the repo](https://github.com/email-signatures-asban/fork).
+1. [Fork the repo](https://github.com/FEBIOTEC/email-signatures-asban/fork).
 2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`).
 3. Add and commit your Changes (`git add src; git commit -am 'Add some AmazingFeature'`).
 4. Push to the Branch (`git push origin feature/AmazingFeature`).
 5. Repeat steps 3 and 4 as many times as you need.
-6. [Open a pull request from your fork to the develop branch](https://github.com/email-signatures-asban/compare).
+6. [Open a pull request from your fork to the develop branch](https://github.com/FEBIOTEC/email-signatures-asban/compare).
 7. Repeat steps 3 and 4 if further changes are required.
 
 Do not forget to give the project a star ⭐ on GitHub!
